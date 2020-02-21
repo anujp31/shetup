@@ -1,0 +1,2 @@
+# shetup
+shell setup
