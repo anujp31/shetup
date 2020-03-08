@@ -1,0 +1,20 @@
+[battery]
+disabled = true
+
+[memory_usage]
+threshold = 75
+
+[conda]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[hg_branch]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[php]
+disabled = true
