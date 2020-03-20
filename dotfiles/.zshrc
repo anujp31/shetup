@@ -77,6 +77,6 @@ fi
 #  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # added by pipx (https://github.com/pipxproject/pipx)
-export PATH="/Users/anuj/.local/bin:$PATH"
+export PATH="/Users/$USER/.local/bin:$PATH"
 
 eval "$(starship init zsh)"
