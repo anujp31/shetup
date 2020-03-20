@@ -1,19 +1,22 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
-
-RESH_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-cd
-
-mkdir -p ~/.dotfiles
-cp -r $RESH_ROOT/dotfiles/* ~/
-
 touch ~/.hushlogin
 
 if ! brew update; then
     echo "Installing Homebrew"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+sudo cp -r .config ~/        && sudo chown -R $USER ~/.config
+sudo cp -r .ssh ~/           && sudo chown -R $USER ~/.ssh
+
+sudo cp .key-bindings.zsh ~/ && sudo chown -R $USER ~/.key-bindings.zsh
+sudo cp .profile ~/          && sudo chown -R $USER ~/.profile
+sudo cp .zsh_plugins.txt ~/  && sudo chown -R $USER ~/.zsh_plugins.txt
+
+brew cask install homebrew/cask-versions/adoptopenjdk8
+brew install python3
+brew install zsh
 
 brew install \
     antibody \
@@ -133,6 +136,7 @@ brew cask install \
     whatsapp \
     yacreader
 
+# iTerm integration
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 /usr/local/bin/zsh -c 'curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash'
 
@@ -140,7 +144,10 @@ curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utili
 mkdir -p ~/.cache
 
 # antibody
-/usr/local/bin/antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+$(brew --prefix)/bin/antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+
+# fzf
+$(brew --prefix)/Cellar/fzf/0.20.0/install --all
 
 # pyenv
 cat << EOF >> ~/.bashrc
@@ -149,4 +156,7 @@ export PYTHONSTARTUP=~/.pythonrc
 eval "$(pyenv init -)"
 EOF
 
+# INTERACTIVE
+echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/zsh
+ssh-keygen
