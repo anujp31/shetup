@@ -6,5 +6,5 @@ There used to be a more complicated version of this but the complexity wasn't wo
 Just comment out what you dont want and do:
 
 ```bash
-bash setup.sh
+bash mac-setup.sh
 ```
