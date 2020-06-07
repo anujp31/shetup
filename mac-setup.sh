@@ -147,7 +147,7 @@ mkdir -p ~/.cache
 $(brew --prefix)/bin/antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
 # fzf
-$(brew --prefix)/Cellar/fzf/0.20.0/install --all
+$(brew --prefix fzf)/install --all
 
 # pyenv
 cat << EOF >> ~/.bashrc

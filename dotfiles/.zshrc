@@ -80,3 +80,7 @@ fi
 export PATH="/Users/$USER/.local/bin:$PATH"
 
 eval "$(starship init zsh)"
+
+alias fzfpbat="fzf --preview 'bat --style=numbers --color=always {} | head -500'"
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
