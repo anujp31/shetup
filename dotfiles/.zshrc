@@ -48,8 +48,11 @@ source ~/.fzf.zsh
 
 source "${HOME}/.iterm2_shell_integration.zsh"
 
-# export PYTHONSTARTUP=~/.pythonrc
-# eval "$(pyenv init -)"
+
+# PYTHON
+# pyenv
+export PYTHONSTARTUP=~/.pythonrc
+eval "$(pyenv init -)"
 
 # pip zsh completion start
 function _pip_completion {
@@ -61,23 +64,23 @@ function _pip_completion {
              PIP_AUTO_COMPLETE=1 $words[1] ) )
 }
 compctl -K _pip_completion pip3
-# pip zsh completion end
 
-#compdef pipenv
+# compdef pipenv
 _pipenv() {
   eval $(env COMMANDLINE="${words[1,$CURRENT]}" _PIPENV_COMPLETE=complete-zsh  pipenv)
 }
 if [[ "$(basename -- ${(%):-%x})" != "_pipenv" ]]; then
-#  autoload -U compinit && compinit
+  # autoload -U compinit && compinit
   compdef _pipenv pipenv
 fi
 
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-#  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-
 # added by pipx (https://github.com/pipxproject/pipx)
 export PATH="/Users/$USER/.local/bin:$PATH"
+
+# nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 eval "$(starship init zsh)"
 
