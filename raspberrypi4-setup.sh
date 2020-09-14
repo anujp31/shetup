@@ -62,17 +62,23 @@ echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> ~/.profile
     jq \
     ripgrep
 
-/home/linuxbrew/.linuxbrew/bin/antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+curl -sfL git.io/antibody | sh -s - -b ./
+sudo mv antibody /usr/local/bin/
+/usr/local/bin/antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O $HOME/.dircolors
 
 cat <<'EOF' >> ~/.zsh_plugins.txt
 robbyrussell/oh-my-zsh path:plugins/fasd
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+mafredri/zsh-async
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
+sindresorhus/pure
 EOF
 
 cat <<'EOF'>> ~/.zshrc
+zstyle ':prompt:pure:prompt:success' color green
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fpath=(/home/linuxbrew/.linuxbrew/share/zsh-completions $fpath)
 
@@ -95,9 +101,10 @@ eval "$(starship init zsh)"
 eval $(dircolors -b $HOME/.dircolors)
 
 # use bat for man pages
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 alias ls='ls --color'
+alias temp='/opt/vc/bin/vcgencmd measure_temp'
 EOF
 
 chsh -s /usr/bin/zsh
