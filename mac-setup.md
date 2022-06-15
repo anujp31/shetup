@@ -2,62 +2,62 @@
 
 ## First things first...
 1. Install Homebrew
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
 
 1. Install essentials
-```bash
-brew install aria2
-brew install bat
-brew install curl
-brew install fasd
-brew install fd
-brew install findutils
-brew install fzf
-brew install git
-brew install gnu-getopt
-brew install gnu-indent
-brew install gnu-sed
-brew install gnu-tar
-brew install grep
-brew install gawk
-brew install gcc
-brew install openssl
-brew install htop
-brew install httpie
-brew install imagemagick
-brew install jq
-brew install nano
-brew install rename
-brew install ripgrep
-brew install sd
-brew install starship
-brew install terminal-notifier
-brew install tmux
-brew install tree
-brew install watch
-brew install wget
-brew install xsv
-brew install zinit
-brew install zstd
+    ```bash
+    brew install aria2
+    brew install bat
+    brew install curl
+    brew install fasd
+    brew install fd
+    brew install findutils
+    brew install fzf
+    brew install git
+    brew install gnu-getopt
+    brew install gnu-indent
+    brew install gnu-sed
+    brew install gnu-tar
+    brew install grep
+    brew install gawk
+    brew install gcc
+    brew install openssl
+    brew install htop
+    brew install httpie
+    brew install imagemagick
+    brew install jq
+    brew install nano
+    brew install rename
+    brew install ripgrep
+    brew install sd
+    brew install starship
+    brew install terminal-notifier
+    brew install tmux
+    brew install tree
+    brew install watch
+    brew install wget
+    brew install xsv
+    brew install zinit
+    brew install zstd
 
-brew install iterm2 # Better terminal
-brew install monitorcontrol # Control external monitor brighness
-brew install rectangle # Window snapping/tiling
-brew install sensiblesidebuttons # Enable mouse side buttons
-```
+    brew install iterm2 # Better terminal
+    brew install monitorcontrol # Control external monitor brighness
+    brew install rectangle # Window snapping/tiling
+    brew install sensiblesidebuttons # Enable mouse side buttons
+    ```
 
 1. Complete fzf install
-```
-$(brew --prefix fzf)/install --all
-```
+    ```
+    $(brew --prefix fzf)/install --all
+    ```
 
 1. Other stuff
-```bash
-mkdir ~/.cache
-touch .hushlogin
-```
+    ```bash
+    mkdir ~/.cache
+    touch .hushlogin
+    ```
 
 1. Copy [.zshrc](mac/.zshrc) to `~/.zshrc`
 
@@ -66,9 +66,9 @@ touch .hushlogin
 1. Copy [DefaultKeyBinding.dict](mac/DefaultKeyBinding.dict) to `~/Library/KeyBindings/DefaultKeyBinding.dict`
 
 1. Install iterm2 utilities
-```bash
-zsh -c 'curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash'
-```
+    ```bash
+    zsh -c 'curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash'
+    ```
 
 ## Other stuff
 ### Useful apps
