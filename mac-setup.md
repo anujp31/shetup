@@ -66,11 +66,10 @@
     zsh -c 'curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash'
     ```
 
-Fix Home/End etc.
-1. Copy [.key-bindings.zsh](mac/.key-bindings.zsh) to `~/.key-bindings.zsh`
-
-1. Copy [DefaultKeyBinding.dict](mac/DefaultKeyBinding.dict) to `~/Library/KeyBindings/DefaultKeyBinding.dict`
-You will need to `mkdir ~/Library/KeyBindings.dict`
+1. Fix Home/End etc.
+    - Copy [.key-bindings.zsh](mac/.key-bindings.zsh) to `~/.key-bindings.zsh`
+    - `mkdir -p ~/Library/KeyBindings.dict`
+    - Copy [DefaultKeyBinding.dict](mac/DefaultKeyBinding.dict) to `~/Library/KeyBindings/DefaultKeyBinding.dict`
 
 
 ## Other stuff
