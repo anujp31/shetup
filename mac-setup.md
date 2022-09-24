@@ -61,14 +61,17 @@
 
 1. Copy [.zshrc](mac/.zshrc) to `~/.zshrc`
 
-1. Copy [.key-bindings.zsh](mac/.key-bindings.zsh) to `~/.key-bindings.zsh`
-
-1. Copy [DefaultKeyBinding.dict](mac/DefaultKeyBinding.dict) to `~/Library/KeyBindings/DefaultKeyBinding.dict`
-
 1. Install iterm2 utilities
     ```bash
     zsh -c 'curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash'
     ```
+
+Fix Home/End etc.
+1. Copy [.key-bindings.zsh](mac/.key-bindings.zsh) to `~/.key-bindings.zsh`
+
+1. Copy [DefaultKeyBinding.dict](mac/DefaultKeyBinding.dict) to `~/Library/KeyBindings/DefaultKeyBinding.dict`
+You will need to `mkdir ~/Library/KeyBindings.dict`
+
 
 ## Other stuff
 ### Useful apps
@@ -77,7 +80,7 @@ brew install alt-tab # Better alt tab (actually opt+tab)
 brew install appcleaner # App uninstaller
 brew install dbeaver-community # Database/SQL client
 brew install firefox
-brew install font-hack-nerd-font # Best monospace font
+brew tap homebrew/cask-fonts && brew install font-hack-nerd-font # Best monospace font
 brew install google-chrome
 brew install google-drive
 brew install hot # CPU temp / Fan monitor
@@ -85,9 +88,12 @@ brew install iina # Video player
 brew install slack
 brew install spotify
 brew install whatsapp
-brew install wireguard # VPN
 brew install yacreader # Comic book reader
 ```
+
+### Remote Access VPN
+- [wireguard](https://apps.apple.com/us/app/wireguard/id1451685025?mt=12)
+- [Tailscale](https://apps.apple.com/us/app/tailscale/id1475387142?mt=12)
 
 ### Python
 ```bash
