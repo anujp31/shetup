@@ -139,3 +139,6 @@ ControlMaster auto
 ControlPath ~/.ssh/socket-%r@%h-%p
 ControlPersist 600
 ```
+
+### Color Schems for iTerm (and others)
+https://github.com/mbadolato/iTerm2-Color-Schemes
